@@ -18,7 +18,7 @@
                 <ul class="breadcrumb">
                     <li>
                     <i class="fa fa-home"></i>
-                    <a href="<?php echo site_url('admin');?>">Administração</a>
+                    <a href="<?php echo site_url(get_user()->getRole());?>">Administração</a>
                     <span class="divider"><i class="fa fa-angle-right"></i></span>
                     </li>
                     <li class="active"><?php echo (isset($title))?$title:'';?></li>

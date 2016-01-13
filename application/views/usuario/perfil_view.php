@@ -52,7 +52,7 @@
 
                         <div class="col-sm-9 col-lg-10 controls">
 
-                            <input type="hidden" name="profile_photo" id="profile_photo"
+                            <input type="hidden" name="avatar" id="profile_photo"
                                    value="<?php echo get_profile_photo_name_by_username($perfil->getUsername()); ?>">
 
                             <iframe src="<?php echo site_url('perfil/photo_uploader'); ?>"
@@ -72,9 +72,9 @@
 
                         <div class="col-sm-9 col-lg-10 controls">
 
-                            <input type="text" name="user_name" value="<?php echo $perfil->getUsername(); ?>"
+                            <input type="text" name="username" value="<?php echo $perfil->getUsername(); ?>"
 
-                                   placeholder="User Name" class="form-control">
+                                   placeholder="User Name" class="form-control" disabled="disabled">
 
                             <span class="help-inline">&nbsp;</span>
 
@@ -92,9 +92,9 @@
 
                         <div class="col-sm-9 col-lg-10 controls">
 
-                            <input type="text" name="first_name" value="<?php echo $perfil->getNome() ?>"
+                            <input type="text" name="nome" value="<?php echo $perfil->getNome() ?>"
 
-                                   placeholder="User Name" class="form-control">
+                                   placeholder="Nome" class="form-control">
 
                             <span class="help-inline">&nbsp;</span>
 
@@ -114,7 +114,7 @@
 
                             <?php $curr_value = (set_value('gender') != '') ? set_value('gender') : $perfil->getGender(); ?>
 
-                            <select class="form-control" name="gender">
+                            <select class="form-control" name="sexo">
 
                                 <?php $sel = ($curr_value == 'male') ? 'selected="selected"' : ''; ?>
 
@@ -144,7 +144,7 @@
 
                         <div class="col-sm-9 col-lg-10 controls">
 
-                            <input type="text" name="fb_profile" value="<?php echo $perfil->getFacebook(); ?>"
+                            <input type="text" name="facebook" value="<?php echo $perfil->getFacebook(); ?>"
 
                                    placeholder="Facebook Profile Link" class="form-control">
 

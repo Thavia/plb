@@ -1,6 +1,9 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
+/**
+ * @property  CI_DB_active_record db
+ */
 class Users_model extends CI_Model
 {
     function __construct()
@@ -9,13 +12,13 @@ class Users_model extends CI_Model
         $this->load->database();
     }
 
-    function check_login($user_email, $password)
+    function check_login($usuarioOuEmail, $password)
     {
         $this->load->library('encrypt');
         $password = $this->encrypt->hash($password);
 
-        $this->db->where('username', $user_email);
-        $this->db->or_where('username', $user_email);
+        $this->db->where('username', $usuarioOuEmail);
+        $this->db->or_where('email', $usuarioOuEmail);
         $query = $this->db->get_where('users', array('password' => $password));
 
         return $query;
@@ -27,7 +30,7 @@ class Users_model extends CI_Model
         $this->db->select('*');
         $this->db->from('users');
         $this->db->join('users_perfil', 'users.id = users_perfil.fk_user','left');
-        $this->db->join('users_grupo', 'users.fk_grupo = users_grupo.id','left');
+        $this->db->join('users_grupo', 'users.fk_grupo = users_grupo.id','inner');
         $this->db->where(array('users.id' => $userId));
         $query = $this->db->get();
 
@@ -59,6 +62,30 @@ class Users_model extends CI_Model
         );
 
         set_cookie($cookie);
+    }
+
+    function getUsers($filtros = array(), $execute = false){
+
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->join('users_perfil', 'users.id = users_perfil.fk_user','left');
+        $this->db->join('users_grupo', 'users.fk_grupo = users_grupo.id','inner');
+
+
+        if(array_key_exists('role',$filtros))
+        {
+
+            $this->db->where(array('users_grupo.role' => $filtros['role']));
+
+        }
+
+
+        $query = $this->db->get();
+
+        return $execute == true ? $query->result(): $query;
+
+
+
     }
 
 }

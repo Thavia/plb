@@ -2,8 +2,8 @@
     <ul class="nav nav-list">
      <?php if(get_user()->getRole()=='admin'){?>
 
-                <li class="<?php echo is_active_menu('admin/index');?>">
-                <a href="<?php echo site_url('admin/index');?>">
+                <li class="<?php echo is_active_menu(get_user()->getRole());?>">
+                <a href="<?php echo site_url(get_user()->getRole());?>">
                 <i class="fa fa-dashboard"></i>
                 <span>Dashboard</span>
                 </a>

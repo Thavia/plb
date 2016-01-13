@@ -1,25 +1,57 @@
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/assets/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/assets/font-awesome/css/font-awesome.min.css">
+<!--- jQuery -->
+<script src="<?php echo base_url();?>assets/js/jquery-2.1.4.min.js"></script>
+<script src="<?php echo base_url();?>assets/admin/js/jquery-migrate-1.2.1.min.js"></script>
+<!----Moment Datetime picker --->
+<script src="<?php echo base_url();?>assets/js/moment/moment.min.js"></script>
+<script src="<?php echo base_url();?>assets/js/moment/locales.min.js"></script>
+
+<!--- Bootstrap 3.0 -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap-3.3.5/css/bootstrap.min.css">
+<script src="<?php echo base_url();?>assets/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="<?php echo base_url();?>assets/font-awesome-4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/assets/bootstrap-datepicker/css/datepicker.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/assets/bootstrap-duallistbox/duallistbox/bootstrap-duallistbox.css" />
+
+
+<!--- Bootstrap Datetime Picker --->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/bootstrap-3.3.5/css/bootstrap-datetimepicker.min.css">
+<script src="<?php echo base_url();?>assets/bootstrap-3.3.5/js/bootstrap-datetimepicker.min.js"></script>
+
+<!-- Bootrstrap Summernote Editor de Texto -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/js/summernote/summernote.css">
+<script src="<?php echo base_url();?>assets/js/summernote/summernote.min.js"></script>
+
+<!-- Bootrstrap Editable -->
+<link rel="stylesheet" href="<?php echo base_url();?>assets/js/bootstrap3-editable-1.5.1/css/bootstrap-editable.css">
+<script src="<?php echo base_url();?>assets/js/bootstrap3-editable-1.5.1/js/bootstrap-editable.min.js"></script>
+
+
+
+<!-- Custom JS e CSS -->
+<script src="<?php echo base_url();?>assets/js/mask.js"></script>
+
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/css/dbcadmin.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/css/memento-responsive.css">
-
 <!--Table-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/assets/data-tables/bootstrap3/dataTables.bootstrap.css" />
-
 <!--Gritter-->
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/assets/gritter/css/jquery.gritter.css">
 
+
+
+
 <!--Calendar-->
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/assets/jquery-ui/jquery-ui.min.css"/>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/assets/fullcalendar/fullcalendar/fullcalendar.css"/>
+<script src="<?php echo base_url();?>assets/admin/assets/ckeditor/ckeditor.js"></script>
+<script src="<?php echo base_url();?>assets/admin/assets/fullcalendar/fullcalendar-2.2.6/lib/jquery-ui.custom.min.js"></script>
+<script src="<?php echo base_url();?>assets/admin/assets/fullcalendar/fullcalendar-2.2.6/lib/moment.min.js"></script>
+<script src="<?php echo base_url();?>assets/admin/assets/fullcalendar/fullcalendar-2.2.6/fullcalendar.js"></script>
+<script src="<?php echo base_url();?>assets/admin/assets/fullcalendar/fullcalendar-2.2.6/lang-all.js"></script>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/assets/fullcalendar/fullcalendar-2.2.6/fullcalendar.css">
 
-<!--Rickh Text Editor-->
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/admin/assets/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
 
-<!--Rickh Text Editor-->
 
-<link href="<?php echo base_url();?>assets/admin/css/no-more-table.css" rel="stylesheet">
-<link href="<?php echo base_url();?>assets/admin/css/custom-admin.css" rel="stylesheet">
+
+
 
 <?php /*?>
 <!--Form Components-->
@@ -61,8 +93,4 @@
 <?php */?>
 <link rel="shortcut icon" href="<?php echo base_url();?>assets/admin/img/favicon.png">
 
-<script src="<?php echo base_url();?>assets/admin/js/jquery-2.1.1.min.js"></script>
-<script src="<?php echo base_url();?>assets/admin/js/jquery-migrate-1.2.1.min.js"></script>
-<script>window.jQuery || document.write('<script src="<?php echo base_url();?>assets/admin/assets/jquery/jquery-2.1.1.min.js"><\/script>')</script>
-<script src="<?php echo base_url();?>assets/js/summernote/summernote.min.js"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/js/summernote/summernote.css" />
+

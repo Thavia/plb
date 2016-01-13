@@ -235,4 +235,156 @@ if ( ! function_exists('name_from_url'))
         return $fileParts['basename'];
     }
 }
+if ( ! function_exists('formatar_data')) {
+function formatar_data($data, $formato = 2)
+{
+    if ($data == '') {
 
+        return false;
+    } else {
+        $date = strtotime($data);
+        $day = date("l", $date);
+        $daynum = date("j", $date);
+        $month = date("F", $date);
+        $year = date("Y", $date);
+
+        if ($formato == 1) {
+
+            switch ($day) {
+                case "Monday":
+                    $day = "Segunda";
+                    break;
+                case "Tuesday":
+                    $day = "Terça";
+                    break;
+                case "Wednesday":
+                    $day = "Quarta";
+                    break;
+                case "Thursday":
+                    $day = "Quinta";
+                    break;
+                case "Friday":
+                    $day = "Sexta";
+                    break;
+                case "Saturday":
+                    $day = "Sábado";
+                    break;
+                case "Sunday":
+                    $day = "Domingo";
+                    break;
+                default:
+                    $day = "erro";
+                    break;
+            }
+
+            switch ($month) {
+                case "January":
+                    $month = "Janeiro";
+                    break;
+                case "February":
+                    $month = "Fevereiro";
+                    break;
+                case "March":
+                    $month = "Março";
+                    break;
+                case "April":
+                    $month = "Abril";
+                    break;
+                case "May":
+                    $month = "Maio";
+                    break;
+                case "June":
+                    $month = "Junho";
+                    break;
+                case "July":
+                    $month = "Julho";
+                    break;
+                case "August":
+                    $month = "Agosto";
+                    break;
+                case "September":
+                    $month = "Setembro";
+                    break;
+                case "October":
+                    $month = "Outubro";
+                    break;
+                case "November":
+                    $month = "Novembro";
+                    break;
+                case "December":
+                    $month = "Dezembro";
+                    break;
+                default:
+                    $month = "erro";
+                    break;
+            }
+
+            return $day . ", " . $daynum . " de " . $month . " de " . $year;
+
+
+        }
+
+        if ($formato == 2) {
+            return date('d/m/Y', $date);
+        }
+
+        if ($formato == 3) {
+
+            return date('d/m/Y H:i', $date);
+        }
+        if ($formato == 4) {
+
+            return date('Y-m-d H:i', $date);
+        }
+
+        if ($formato == 'mes') {
+
+            $month = date("F", $date);
+
+            switch ($month) {
+                case "January":
+                    $month = "Janeiro";
+                    break;
+                case "February":
+                    $month = "Fevereiro";
+                    break;
+                case "March":
+                    $month = "Março";
+                    break;
+                case "April":
+                    $month = "Abril";
+                    break;
+                case "May":
+                    $month = "Maio";
+                    break;
+                case "June":
+                    $month = "Junho";
+                    break;
+                case "July":
+                    $month = "Julho";
+                    break;
+                case "August":
+                    $month = "Agosto";
+                    break;
+                case "September":
+                    $month = "Setembro";
+                    break;
+                case "October":
+                    $month = "Outubro";
+                    break;
+                case "November":
+                    $month = "Novembro";
+                    break;
+                case "December":
+                    $month = "Dezembro";
+                    break;
+                default:
+                    $month = "erro";
+                    break;
+            }
+
+            return $month;
+        }
+
+    }
+}}

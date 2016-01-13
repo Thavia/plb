@@ -33,6 +33,28 @@ class Perfil extends MY_Controller
 
     }
 
+
+    public function update()
+
+    {
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     public function photo_uploader()
 
     {

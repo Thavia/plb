@@ -1,9 +1,12 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: tavia
  * Date: 1/11/16
  * Time: 2:53 PM
+
+ * @property Users_model $users_model
  */
 
 
@@ -23,9 +26,11 @@ class Login extends MY_Controller
         $this->load->view('template/login_view', $data);
     }
 
+    /**
+     *
+     */
     function logar ()
     {
-
 
         $user_name = $this->input->post('username');
         $password  = $this->input->post('password');

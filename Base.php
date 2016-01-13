@@ -19,6 +19,7 @@ die();
 
 /**
  * @property Users $users
+ * @property Users_model $users_model
  * @property CI_DB_active_record $db
  * @property CI_DB_forge $dbforge
  * @property CI_Benchmark $benchmark
