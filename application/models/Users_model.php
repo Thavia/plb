@@ -69,7 +69,7 @@ class Users_model extends CI_Model
      * @param bool|false $execute
      * @return User |CI_DB_mysqli_result
      */
-    function getUsers($filtros = array(), $execute = false){
+    function getUsers($filtros = array(), $start=0, $limit=0, $execute = false){
 
         $this->db->select('*');
         $this->db->from('users');
@@ -84,11 +84,62 @@ class Users_model extends CI_Model
 
         }
 
+        if(array_key_exists('nome',$filtros))
+        {
 
+            $this->db->where(array('users_perfil.nome' => $filtros['nome']));
+
+        }
+
+        if(array_key_exists('email',$filtros))
+        {
+
+            $this->db->where(array('users.email' => $filtros['email']));
+
+        }
+
+        $this->db->limit($limit, $start);
         $query = $this->db->get();
 
         return $execute == true ? $query->result(): $query;
 
+
+
+    }
+
+    public function countUsers($filtros, $execute = true)
+
+    {
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->join('users_perfil', 'users.id = users_perfil.fk_user','left');
+        $this->db->join('users_grupo', 'users.fk_grupo = users_grupo.id','inner');
+
+
+        if(array_key_exists('role',$filtros))
+        {
+
+            $this->db->where(array('users_grupo.role' => $filtros['role']));
+
+        }
+
+        if(array_key_exists('nome',$filtros))
+        {
+
+            $this->db->where(array('users_perfil.nome' => $filtros['nome']));
+
+        }
+
+        if(array_key_exists('email',$filtros))
+        {
+
+            $this->db->where(array('users.email' => $filtros['email']));
+
+        }
+
+        $query = $this->db->get();
+
+        return $execute == true ? $query->num_rows(): $query;
 
 
     }

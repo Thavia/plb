@@ -2,7 +2,7 @@
 
 
 /**
- * @property  CI_DB_active_record db
+ * @property  CI_DB_query_builder db
  */
 class Agenda_model extends CI_Model
 {

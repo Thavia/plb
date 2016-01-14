@@ -16,6 +16,7 @@ class Perfil extends MY_Controller
         $this->getUser()->getRole() != '' ? :
             redirect(site_url().'/login/determinaDashboard');
 
+        $this->load->model('users_model');
 
     }
 

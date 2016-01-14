@@ -388,3 +388,35 @@ function formatar_data($data, $formato = 2)
 
     }
 }}
+
+
+
+if ( ! function_exists('configPagination'))
+{
+    function configPagination($url,$total_rows,$segment,$per_page=10)
+    {
+        $CI = get_instance();
+        $CI->load->library('pagination');
+        $config['base_url'] 		= site_url($url);
+        $config['total_rows'] 		= $total_rows;
+        $config['per_page'] 		= $per_page;
+        $config['uri_segment'] 		= $segment;
+        $config['full_tag_open'] 	= '<div class="pagination"><ul>';
+        $config['full_tag_close'] 	= '</ul></div>';
+        $config['num_tag_open'] 	= '<li>';
+        $config['num_tag_close'] 	= '</li>';
+        $config['cur_tag_open'] 	= '<li class="active"><a href="#">';
+        $config['cur_tag_close']	= '</a></li>';
+        $config['num_links'] 		= 5;
+        $config['next_tag_open'] 	= "<li>";
+        $config['next_tag_close'] 	= "</li>";
+        $config['prev_tag_open'] 	= "<li>";
+        $config['prev_tag_close'] 	= "</li>";
+
+        $config['first_link'] 	= FALSE;
+        $config['last_link'] 	= FALSE;
+        $CI->pagination->initialize($config);
+
+        return $CI->pagination->create_links();
+    }
+}
