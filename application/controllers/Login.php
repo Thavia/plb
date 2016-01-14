@@ -5,8 +5,8 @@
  * User: tavia
  * Date: 1/11/16
  * Time: 2:53 PM
-
  * @property Users_model $users_model
+ *@property  CI_Session $session
  */
 
 
@@ -78,9 +78,9 @@ class Login extends MY_Controller
 
 
 
-        if($user = $this->getUser()) {
+        if($this->session->userdata('user')) {
 
-
+            $user = $this->getUser();
             switch ($user->getRole()) {
 
                 case 'admin':
