@@ -2,7 +2,7 @@
 
 
 /**
- * @property  CI_DB_active_record db
+ * @property  CI_DB_query_builder $db
  */
 class Users_model extends CI_Model
 {
@@ -64,6 +64,11 @@ class Users_model extends CI_Model
         set_cookie($cookie);
     }
 
+    /**
+     * @param array $filtros
+     * @param bool|false $execute
+     * @return User |CI_DB_mysqli_result
+     */
     function getUsers($filtros = array(), $execute = false){
 
         $this->db->select('*');

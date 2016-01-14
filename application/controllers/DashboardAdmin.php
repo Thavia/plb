@@ -38,7 +38,6 @@ class DashboardAdmin extends MY_Controller
 
         $dados['faturamentoMes'] = '';
 
-
         $filtro['role'] = 'estudante';
         $dados['totalAlunos'] = $this->users_model->getUsers($filtro)->num_rows();
         $filtro['role'] = 'professor';
