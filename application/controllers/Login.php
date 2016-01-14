@@ -76,22 +76,34 @@ class Login extends MY_Controller
 
     {
 
-        $user = $this->getUser();
 
 
-        switch ($user->getRole()){
+        if($user = $this->getUser()) {
 
-            case 'admin': redirect(site_url().'/admin');
-                break;
-            case 'financeiro':  redirect(site_url().'/financeiro');
-                break;
-            case 'professor': redirect(site_url().'/professor');
-                break;
-            case 'estudante': redirect(site_url().'/estudante');
-                break;
-            default:
-                redirect(site_url().'/login');
 
+            switch ($user->getRole()) {
+
+                case 'admin':
+                    redirect(site_url() . '/admin');
+                    break;
+                case 'financeiro':
+                    redirect(site_url() . '/financeiro');
+                    break;
+                case 'professor':
+                    redirect(site_url() . '/professor');
+                    break;
+                case 'estudante':
+                    redirect(site_url() . '/estudante');
+                    break;
+                default:
+                    redirect(site_url() . '/login');
+
+            }
+        }
+        else
+        {
+
+            redirect(site_url() . '/login');
         }
 
     }
