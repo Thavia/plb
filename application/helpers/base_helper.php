@@ -18,7 +18,7 @@ if ( ! function_exists('get_option'))
 
         if($defined==0)
         {
-            $CI = get_instance();
+                    $CI = get_instance();
             $CI->load->database();
             $query = $CI->db->get_where('options',array('key'=>$key,'status'=>1));
             if($query->num_rows()>0)
@@ -33,6 +33,7 @@ if ( ! function_exists('get_option'))
             return $option;
         }
     }
+
 }
 
 if ( ! function_exists('get_settings'))
@@ -419,4 +420,28 @@ if ( ! function_exists('configPagination'))
 
         return $CI->pagination->create_links();
     }
+}if ( ! function_exists('formaPagamento'))
+{
+    function formaPagamento($formaPagamento)
+
+    {
+        switch($formaPagamento){
+
+            case 'cc': $fp = 'Cartão de Crédito';
+                break;
+            case 'boleto': $fp = 'Boleto';
+                break;
+            default: $fp = 'Offline';
+
+
+        }
+
+        return $fp;
+
+    }
+
+
+
+
+
 }

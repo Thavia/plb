@@ -2,9 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 require_once ('User.php');
+require_once ('GerenciaNetApi.php');
 
 
-
+/**
+ * @property  CI_Form_validation form_validation
+ */
 class MY_Controller extends CI_Controller {
 
 	public function __construct()

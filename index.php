@@ -53,6 +53,10 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
+
+
+  $_SERVER['HTTP_HOST'] == 'plb.dev' ? $_SERVER['CI_ENV'] = 'development' : $_SERVER['CI_ENV'] = 'production';
+
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
 
 /*
@@ -289,4 +293,5 @@ switch (ENVIRONMENT)
  *
  * And away we go...
  */
+require_once 'vendor/autoload.php';
 require_once BASEPATH.'core/CodeIgniter.php';

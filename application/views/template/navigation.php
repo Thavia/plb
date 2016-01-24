@@ -47,12 +47,8 @@
              </a>
 
              <ul class="submenu">
-                 <li class="<?php echo is_active_menu('admin/faturas/listar')?>">
-                     <a href="<?php echo site_url('admin/faturas/listar');?>">Listar Faturas</a>
-
-                 </li>
-                 <li class="<?php echo is_active_menu('admin/faturas/gerar')?>">
-                     <a href="<?php echo site_url('admin/faturas/gerar');?>">Gerar Faturas</a>
+                 <li class="<?php echo is_active_menu('faturas')?>">
+                     <a href="<?php echo site_url('faturas');?>">Listar Faturas</a>
 
                  </li>
 

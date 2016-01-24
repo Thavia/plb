@@ -57,7 +57,11 @@
                     <div class="content">
 
                         <p class="big">
-                            <?php echo $faturamentoMes ?>
+                            <?php foreach($faturamentoMes->result() as $fm):
+
+                            echo 'R$ '. $fm->valor;
+                            endforeach;
+                    ?>
                         </p>
 
                         <p class="title"> Faturamento em <?php echo formatar_data(date('M'),'mes')?></p>

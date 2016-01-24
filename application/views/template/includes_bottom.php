@@ -1,5 +1,6 @@
 <script src="<?php echo base_url();?>assets/admin/assets/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="<?php echo base_url();?>assets/admin/assets/jquery-cookie/jquery.cookie.js"></script>
+<script src="<?php echo base_url();?>assets/jquery-creditcardvalidator/jquery.creditCardValidator.js"></script>
 
 <!--Calendar-->
 <script src="<?php echo base_url();?>assets/admin/assets/jquery-ui/jquery-ui.min.js"></script>

@@ -2,7 +2,7 @@
 
 
 /**
- * @property  CI_DB_query_builder $db
+ * @property  CI_DB db
  */
 class Users_model extends CI_Model
 {
@@ -97,8 +97,9 @@ class Users_model extends CI_Model
             $this->db->where(array('users.email' => $filtros['email']));
 
         }
-
+        if($limit > 0)
         $this->db->limit($limit, $start);
+
         $query = $this->db->get();
 
         return $execute == true ? $query->result(): $query;
@@ -141,6 +142,43 @@ class Users_model extends CI_Model
 
         return $execute == true ? $query->num_rows(): $query;
 
+
+    }
+
+    public function addUser($data){
+
+        try{
+            $this->db->insert('users', $data);
+            $query = $this->db->insert_id();
+        }
+        catch(Exception $e) {
+
+            return $e->getMessage();
+        }
+        return $query;
+
+
+    }
+
+    public function addPerfil($data){
+
+        try{
+            $this->db->insert('users_perfil', $data);
+            $query = $this->db->insert_id();
+        }
+        catch(Exception $e) {
+
+            return $e->getMessage();
+        }
+        return $query;
+
+
+    }
+
+    public function checarEmail($email){
+
+         $query = $this->db->get_where('users', array('email' => $email));
+        return $query->num_rows();
 
     }
 
