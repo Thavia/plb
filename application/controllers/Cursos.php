@@ -519,7 +519,7 @@ class Cursos extends MY_Controller
                     $this->faturas_model->addPaymentToken($paymentToken);
 
 
-                    $retorno = $this->geraPagamentoPorCC($subscription, $usuario, $cartao);
+                   $this->geraPagamentoPorCC($subscription, $usuario, $cartao);
 
                 }
 
@@ -537,10 +537,10 @@ class Cursos extends MY_Controller
 
         }
 
-        $this->gnApi->updateCharge($subscription['data']['charges'][0]['charge_id'], $faturaId);
+        $notifyToken = $this->gnApi->updateSubscriptionMetadata($subscription['data']['subscription_id'], $matriculaId);
 
         $this->output->set_content_type('application/json');
-        $json = $this->output->set_output(json_encode($retorno));
+        $json = $this->output->set_output(json_encode($notifyToken));
 
         return $json;
 

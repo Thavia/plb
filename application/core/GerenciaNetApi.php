@@ -15,8 +15,9 @@ class GerenciaNetApi {
     protected  $api;
 
 
-
-
+    /**
+     *
+     */
     function __construct()
 
     {
@@ -212,13 +213,14 @@ class GerenciaNetApi {
         try {
             $notification = $this->api->getNotification($params, []);
 
-            print_r($notification);
-        } catch (GerencianetException $e) {
+                  } catch (GerencianetException $e) {
             print_r($e->error);
             print_r($e->errorDescription);
         } catch (Exception $e) {
             print_r($e->getMessage());
         }
+
+        return $notification;
     }
 
     public function updateCharge($chargeId, $faturaId) {
@@ -236,6 +238,28 @@ class GerenciaNetApi {
 
 
             $charge = $this->api->updateChargeMetadata($params, $body);
+
+
+
+        return $charge;
+
+    }
+
+    public function updateSubscriptionMetadata($subsId, $matriculaId) {
+
+
+
+        $body = [
+            'custom_id' => "$matriculaId",
+            'notification_url' => site_url('api/notificacao')
+        ];
+
+        $params = [
+            'id' => $subsId
+        ];
+
+
+        $charge = $this->api->updateSubscriptionMetadata($params, $body);
 
 
 

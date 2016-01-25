@@ -16,6 +16,9 @@ class Api extends MY_Controller
 
 
 {
+    /**
+     *
+     */
     public function __construct()
     {
         parent::__construct();
@@ -40,6 +43,9 @@ class Api extends MY_Controller
 
     }
 
+    /**
+     * @param $token
+     */
     public function getNotificacao($token)
 
 
