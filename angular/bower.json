@@ -1,8 +1,8 @@
 {
-  "name": "prm2",
-  "description": "Prototipo plataforma PRM 2.0",
+  "name": "plb",
+  "description": "WS EAD Plataforma 2.0",
   "version": "0.0.1",
-  "homepage": "https://www.templum.com.br",
+  "homepage": "https://www.websumare.com.br",
   "license": "MIT",
   "private": true,
   "dependencies": {
