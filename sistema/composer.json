@@ -12,8 +12,7 @@
 	},
 	"require": {
 		"php": ">=5.2.4",
-		"gerencianet/gerencianet-sdk-php": "^1.0",
-		"thavia/mailchimp-3.0": "^1.0"
+		"gerencianet/gerencianet-sdk-php": "^1.0"
 	},
 	"require-dev": {
 		"mikey179/vfsStream": "1.1.*"
