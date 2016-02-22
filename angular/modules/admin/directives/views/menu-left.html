@@ -1,0 +1,41 @@
+<nav>
+    <ul class="nav nav-pills nav-stacked">
+
+        <li class="nav-dropdown"
+            ng-class="{'active': menu.active}"
+            ng-repeat="menu in menuCtrl.menuItems"
+        >
+
+            <a href="javascript:void(0);"
+               id="{{ menu.apelido }}"
+               title=" {{ menu.titulo }} "
+               ng-click="menuCtrl.toggleMenuAtivo(menu)"
+               class=" {{ menu.class }} "
+                    >
+                <i class="{{ menu.icone }}"></i> {{ menu.titulo }}
+            </a>
+
+         <ul class="nav-sub"
+                ng-class="{'nav-sub-active': menu.active}"
+
+                    >
+
+                <li ng-class="{'active': subItems.active}"
+                    ng-repeat="subItems in menu.subItems">
+                    <a href="javascript:void(0);"
+                       id="{{ subItems.apelido }}"
+                       title=" {{ subItems.titulo }}"
+                       ng-click="menuCtrl.toggleMenuAtivo(menu, subItems)"
+                    >
+
+                        <i class="{{ subItems.icone }}"></i> {{ subItems.titulo }}
+                    </a>
+                </li>
+
+
+            </ul>
+        </li>
+
+    </ul>
+</nav>
+

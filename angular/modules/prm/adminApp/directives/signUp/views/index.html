@@ -1,0 +1,45 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title"> {{ conteudoPrincipalTitulo }}</h3>
+    </div>
+    <div class="panel-body" style="padding: 0;">
+
+        <div class="row" ng-switch="conteudoPrincipalModo">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <!-- mostrar quando estiver processando -->
+                <div ng-show="conteudoPrincipalProcessando">
+                    <div class="col-xs-12 text-center">
+                        <img src="public/img/ajax-loader.gif">
+                    </div>
+                </div>
+
+
+                <div class="panel widget-mini" ng-hide="conteudoPrincipalProcessando">
+                    <div class="panel-body">
+
+                        <div ng-switch-when="usuario">
+                            <ng-include src="view('usuario.html')"></ng-include>
+                        </div>
+                        <div ng-switch-when="curso">
+                            <ng-include src="view('curso.html')"></ng-include>
+                        </div>
+                        <div ng-switch-when="pagamento">
+                            <ng-include src="view('pagamento.html')"></ng-include>
+                        </div>
+                        <div ng-switch-when="login">
+                            <ng-include src="view('login.html')"></ng-include>
+                        </div>
+
+                        <div ng-switch-when="confirmation">
+                            <ng-include src="view('confirmation.html')"></ng-include>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

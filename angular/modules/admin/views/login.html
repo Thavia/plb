@@ -1,0 +1,175 @@
+<style type="text/css">
+    #erro-login {
+        min-width: 40px;
+        position: relative;
+        top: 20px;
+        left: 20px;
+        background-color: rgba(239, 207, 207, 0.86);
+        border-radius: 4px;
+        max-width: 30%;
+        padding: 9px;
+        color: #893131;
+        box-shadow: 0px 0px 3px rgba(33, 33, 33, 1);
+        border: 1px solid rgba(188, 108, 108, 1);
+        text-align: center;
+
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+        border-radius: 3px !important;
+        min-width: 50px;
+        max-width: 635px;
+        min-height: 32px;
+        border: 2px solid #c9c9c9;
+
+    }
+
+    #login-wrapper #password {
+        padding-left: inherit!important;
+    }
+
+    .btn-laranja {
+
+        color: #f2f2f2 !important;
+        background-color: #FF6E19 !important;
+
+    }
+
+    .btn-cinza {
+
+        color: #f2f2f2 !important;
+        background-color: #585858 !important;
+        font-weight: bolder;
+        border: 2px solid #585858 !important;
+        border-radius: 3px !important;
+
+    }
+
+    .btn-cinza2 {
+
+        color: #585858 !important;
+        background-color: transparent !important;
+        font-weight: bolder;
+        border: 2px solid #585858 !important;
+        border-radius: 3px !important;
+        padding: 10px 20px;
+
+    }
+
+    .laranja {
+
+        color: #FF6E19 !important;
+
+    }
+
+</style>
+
+
+
+    <div class="theme-dark-full" style="background-color:#f9f9f9;">
+
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-2"
+                 style="
+                 background-color:#f9f9f9;
+                 height: 100vh;
+                 padding: 10px 70px 10px 70px;
+                 margin-bottom: 10px;
+            ">
+                <div id="login-wrapper">
+                    <header>
+                        <div class="brand text-center" style="margin-top: 20px">
+                            <a href="#" class="logo">
+                                <img src="http://prm.prm.net.br/img/logo-prm-login.png" width="310px"> </a>
+                        </div>
+                    </header>
+                    <div>
+
+                        <p class="text-center"> {{ erros}} </p>
+
+                        <div style="margin-top: 10px">
+                            <p><strong> Acesse sua conta</strong></p>
+
+                            <form name="loginForm" class="form-horizontal" role="form">
+
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="text" class="form-control" placeholder="Usuário"
+                                               id="username" ng-model="loginModel.username" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="password" class="form-control" placeholder="Senha" id="password"
+                                               ng-model="loginModel.password" required>
+
+                                        <hr/>
+                                        <a href="loginCtrl.recuperarSenha()"
+                                           class="laranja help-block pull-right text-small">Recuperar Senha</a>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button ng-show="(loginCtrl.clicado == false)" ng-click="loginCtrl.logar()"
+                                                class="btn btn-primary btn-block" ng-disabled="loginForm.$invalid">
+                                            Entrar
+                                        </button>
+
+                                        <button ng-show="(loginCtrl.clicado == true)" class="btn btn-primary btn-block"
+                                                disabled="disabled"><i class="fa fa-gear fa-spin animated"
+                                                                       style="margin-right: 2px;position: inherit;"></i>
+                                            Entrando
+                                        </button>
+
+
+                                        <hr/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="brand text-center" style="margin-top: 40px">
+                        <a href="http:///www.templum.com.br" target="_blank" class="logo">
+                            <img src="http://prm.prm.net.br/img/logo-cinza-templum-menor.png"> </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 col-md-offset-2 "
+                 style="background-color:white;height: 100vh;margin-top: -10px;padding: 90px 70px 0px 70px">
+
+                <h1> Acelere suas vendas </h1>
+                <br>
+
+                <h3> Conheça a plataforma que vai mudar o seu negócio </h3>
+
+                <p>&nbsp;</p>
+
+
+                <p class="text-center"><img width="240px"
+                                            src="http://www.templum.com.br/wp-content/uploads/2014/01/aprendizado.png"/>
+                </p>
+
+                <p>&nbsp;</p>
+
+                <p class="text-center">
+                    <a href="http://www.templum.com.br/contabilidade/" target="_blank" class="btn-cinza2">
+                        Conheça
+                    </a>
+                </p>
+
+            </div>
+        </div>
+
+
+    </div>
+    <!--/.page-content-->
+
+
+
+

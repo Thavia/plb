@@ -1,0 +1,286 @@
+<form name="formEdit" class="form-horizontal">
+    <div ng-init="defineEditForm(formEdit)"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3><i class="fa fa-user"></i> Passo 1: Crie sua conta</h3>
+            <br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 form-group">
+
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Nome Completo:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <input type="text" id="nome"  ng-model="formEditarModel.nome" class="form-control" required ng-minlength=5/>
+                    <span class="help-inline">&nbsp;</span>
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.nome.$invalid && formEdit.nome.$dirty && !formEdit.nome.$error.server">
+                        deve ter pelo menos 5 caracteres
+                    </div>
+
+                    <div class="error" ng-show="formEdit.nome.$error.server && formEdit.nome.$dirty">
+                        {{ mensagemValidacaoServidor('nome') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Email:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <input type="email" id="email" name="email" ng-blur="userController.verificaEmail(formEditarModel.email)" ng-model="formEditarModel.email" class="form-control" required ng-minlength=5/>
+                    <div ng-show="emailEmUso"><span class="help-inline">Este email já está cadastrado, <a ng-click="userController.login()" href="#">clique aqui</a>  para fazer login </span> </div>
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.email.$invalid && formEdit.email.$dirty && !formEdit.email.$error.server">
+                        Este não é um e-mail válido
+                    </div>
+
+                    <div class="error" ng-show="formEdit.email.$error.server && formEdit.email.$dirty">
+                        {{ mensagemValidacaoServidor('nome') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Telefone:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                        <input type="tel"   ng-model="formEditarModel.telefone" name="telefone" ui-mask="(99) 99999-999?9" class="form-control" required ng-minlength=11/>
+                    <span class="help-inline">&nbsp;</span>
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.telefone.$invalid && formEdit.telefone.$dirty && !formEdit.telefone.$error.server">
+                        deve ter pelo menos 11 caracteres
+                    </div>
+
+                    <div class="error" ng-show="formEdit.telefone.$error.server && formEdit.telefone.$dirty">
+                        {{ mensagemValidacaoServidor('nome') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Data de Nascimento:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                        <input type="tel"   ng-model="formEditarModel.nascimento" name="nascimento" ui-mask="99/99/9999" class="form-control" required ng-minlength=8/>
+                    <span class="help-inline">&nbsp;</span>
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.nascimento.$invalid && formEdit.nascimento.$dirty && !formEdit.nascimento.$error.server">
+                        digite uma data válida
+                    </div>
+            </div></div>
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">CPF:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <input type="tel"  name="cpf" ng-model="formEditarModel.cpf" ng-cpf ui-mask="999.999.999-99" class="form-control" required ng-minlength=5/>
+                    <span class="help-inline">&nbsp;</span>
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.cpf.$invalid && formEdit.cpf.$dirty && !formEdit.cpf.$error.server">
+                        Digite um cpf válido
+                    </div>
+
+                    <div class="error" ng-show="formEdit.cpf.$error.server && formEdit.cpf.$dirty">
+                        {{ mensagemValidacaoServidor('nome') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Senha:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <input type="password" id="senha" name="senha"  ng-model="formEditarModel.senha"class="form-control" ng-minlength=6 required />
+                </div>
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.senha.$invalid && formEdit.senha.$dirty && !formEdit.senha.$error.server">
+                        deve ter pelo menos 6 caracteres
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Confirmar Senha:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <input type="password" id="confirmarSenha" ng-model="formEditarModel.confirmarSenha" name="confirmarSenha" class="form-control" ng-minlength=6 required />
+                </div>
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-if="formEditarModel.confirmarSenha != formEditarModel.senha">
+                        As senhas devem ser iguais
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">CEP:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <input type="tel"  name="cep" ng-model="formEditarModel.cep" ng-blur="userController.buscaCEP()" ui-mask="99.999-999" class="form-control" required ng-minlength=8/>
+                    <span class="help-inline">&nbsp;</span>
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.cep.$invalid && formEdit.cep.$dirty && !formEdit.cep.$error.server">
+                        Deve ter 8 dígitos
+                   </div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Logradouro:</label>
+
+                <div class="col-sm-6 col-lg-6 controls">
+                    <input type="text"  name="endereco" ng-model="formEditarModel.endereco"  class="form-control" required/>
+                        <span class="help-inline">&nbsp;</span>
+
+                </div>
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.endereco.$invalid && formEdit.endereco.$dirty && !formEdit.endereco.$error.server">
+                        este campo é obrigatório
+                    </div>
+                </div>
+
+             </div>
+                <div class="form-group">
+                    <label class="col-sm-3 col-lg-4 control-label">Número:</label>
+                <div class="col-sm-2 col-lg-2 controls">
+                        <input type="tel" name="numero" ng-model="formEditarModel.numero"  class="form-control" required/>
+                    <span class="help-inline">&nbsp;</span>
+
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.numero.$invalid && formEdit.numero.$dirty && !formEdit.numero.$error.server">
+                        este campo é obrigatório
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Complemento:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <input type="text"  name="complemento" ng-model="formEditarModel.complemento"  class="form-control"/>
+                    <span class="help-inline">&nbsp;</span>
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Bairro:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <input type="text"  name="bairro" ng-model="formEditarModel.bairro"  class="form-control" required/>
+                    <span class="help-inline">&nbsp;</span>
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.bairro.$invalid && formEdit.bairro.$dirty && !formEdit.bairro.$error.server">
+                        este campo é obrigatório
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Cidade:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <input type="text"  name="cidade" ng-model="formEditarModel.cidade"  class="form-control" required/>
+                    <span class="help-inline">&nbsp;</span>
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.cidade.$invalid && formEdit.cidade.$dirty && !formEdit.cidade.$error.server">
+                        este campo é obrigatório
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Estado:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <input type="text"  name="estado" ng-model="formEditarModel.estado"  class="form-control" required/>
+                    <span class="help-inline">&nbsp;</span>
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.estado.$invalid && formEdit.estado.$dirty && !formEdit.estado.$error.server">
+                        este campo é obrigatório
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label"></label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <br>
+                   <span class="pull-right"><button class="btn btn-primary" ng-click="userController.salvarUsuario()" ng-enter="userController.salvarUsuario()"
+                                                    ng-disabled="emailEmUso == true || formEdit.$invalid || (formEditarModel.confirmarSenha != formEditarModel.senha)">
+
+                       Prosseguir!
+
+                   </button></span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+</form>
+
+
+

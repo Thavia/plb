@@ -1,0 +1,24 @@
+<div ng-if="organizacoesCtrl.testaPermissao()==true" >
+<ul class="nav navbar-nav navbar-right ng-scope" ng-if="navAtivo == 'right'">
+
+    <li
+            style="min-width: 100%;
+            margin-top: 16px;
+            width: 200px;">
+
+
+        <ui-select  ng-model="organizacoesCtrl.organizacaoAtiva"
+                    on-select="organizacoesCtrl.trocaOrganizacao(organizacoesCtrl.organizacaoAtiva)"
+                    ng-disabled="processando"
+                    theme="select2" ng-disabled="disabled"
+                    style="min-width: 100%" reset-search-input="false">
+            <ui-select-match  placeholder="selecione">{{$select.selected.texto }}</ui-select-match>
+
+            <ui-select-choices repeat="org.id as org in organizacoes" refresh="organizacoesCtrl.listaOrganizacoes($select.search)" refresh-delay="200">
+                <span ng-bind-html="org.texto| highlight: $select.search"></span>
+            </ui-select-choices>
+        </ui-select>
+    </li>
+
+</ul>
+</div>

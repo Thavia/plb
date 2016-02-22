@@ -1,0 +1,45 @@
+{
+  "name": "PRM",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Novo PRM",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.3.1",
+    "grunt-contrib-clean": "~0.6.0",
+    "grunt-contrib-connect": "~0.9.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-ngdocs": "~0.2.7",
+    "grunt-php": "~1.2.0",
+    "http-server": "^0.6.1",
+    "karma": "~0.13.3",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-coverage": "^0.2.7",
+    "karma-firefox-launcher": "~0.1.3",
+    "karma-ie-launcher": "~0.1",
+    "karma-jasmine": "~0.1.5",
+    "karma-junit-reporter": "^0.2.2",
+    "karma-phantomjs-launcher": "~0.2.0",
+    "karma-sauce-launcher": "~0.1.8",
+    "karma-script-launcher": "~0.1.0",
+    "karma-story-reporter": "~0.2.2",
+    "protractor": "^1.1.1",
+    "shelljs": "^0.2.6",
+    "phantomjs": "~1.9.17"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "php -S 0:8000",
+    "pretest": "npm install",
+    "test": "karma start test/karma.conf.js",
+    "test-single-run": "karma start test/karma.conf.js  --single-run",
+    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + sed(/sourceMappingURL=angular-loader.min.js.map/,'sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map','app/bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
+  },
+  "dependencies": {
+    "angular-i18n": "^1.3.14",
+    "grunt-cli": "^0.1.13",
+    "grunt-ng-constant": "^1.1.0",
+    "grunt-protractor-runner": "^1.2.1"
+  }
+}

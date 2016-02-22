@@ -1,0 +1,65 @@
+.eventosGerenciar {
+}
+
+.eventosGerenciar .item .quando {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.eventosGerenciar .item .titulo {
+    font-weight: bold;
+}
+
+.eventosGerenciar .item .subinfo {
+    font-size: 0.8em;
+}
+
+
+
+.eventosGerenciar .item .tipo {
+}
+
+.eventosGerenciar .item .oportunidade {
+    font-weight: bold;
+    margin-bottom: 0.8em;
+}
+
+.eventosGerenciar .item .participantes {
+}
+
+
+
+
+.eventosGerenciar .item .descricao {
+    margin-top: 1em;
+}
+
+
+.eventosGerenciar .item .situacao .cancelado {
+    color: #ddd;
+}
+
+.eventosGerenciar .item .situacao .realizado {
+    color: green;
+}
+
+.eventosGerenciar .item .situacao .em_dia {
+    color: blue;
+}
+
+.eventosGerenciar .item .situacao .atrasado {
+    color: red;
+}
+
+
+
+
+.eventosGerenciar .item .detalhes A {
+    font-size: 0.8em;
+}
+
+
+
+
+
+

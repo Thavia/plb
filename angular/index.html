@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="prm" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="prm" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="prm" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="prm" class="no-js"> <!--<![endif]-->
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Center</title>
+
+    <!-- Bootstrap -->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="public/favicon/favicon-prm.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/ajax-busy-indicator.css" />
+
+    <!-- Bootstrap Sliders-->
+    <link rel="stylesheet" type="text/css" href="public/plugins/bootstrap-slider/css/slider.css" />
+
+    <!-- Fonts  -->
+    <link rel="stylesheet" type="text/css" href="public/css/simple-line-icons.css" />
+
+    <!--  CSS Animations -->
+    <link rel="stylesheet" type="text/css" href="public/css/animate.css" />
+
+
+
+    <!-- Plugins de efeito -->
+    <link rel="stylesheet" type="text/css" href="assets/pines-notify/src/pnotify.core.css" />
+    <link rel="stylesheet" type="text/css" href="assets/pines-notify/src/pnotify.buttons.css" />
+    <link rel="stylesheet" type="text/css" href="assets/pines-notify/src/pnotify.picon.css" />
+    <link rel="stylesheet" type="text/css" href="assets/pines-notify/src/pnotify.brighttheme.css" />
+    <link rel="stylesheet" type="text/css" href="public/plugins/uiselect/dist/select.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/ng-ckeditor/ng-ckeditor.css" />
+
+    <link rel="stylesheet" type="text/css" href="assets/icheck/skins/line/grey.css" />
+    <link rel="stylesheet" type="text/css" href="assets/icheck/skins/flat/blue.css" />
+    <link rel="stylesheet" type="text/css" href="modules/prm/directives/icheckbox/style.css" />
+
+    <!-- Select2 theme -->
+    <link rel="stylesheet" type="text/css" href="public/css/select/select2.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/select/selectize.default.css" />
+    <link rel="stylesheet" type="text/css" href="assets/ng-table/dist/ng-table.css" />
+    <!-- Bootstrap -->
+    <!--<link href="assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">-->
+    <!--<link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="assets/fontawesome/css/font-awesome.min.css" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <!--<script src="public/js/jquery-1.10.2.min.js"></script>-->
+    <![endif]-->
+
+
+    <!-- ***** tela de gestão de oportunidade ***** -->
+    <link rel="stylesheet" type="text/css" href="public/oportunidade/geral.css" />
+    <link rel="stylesheet" type="text/css" href="public/oportunidade/gerenciar.css" />
+
+
+    <!-- ***** tela de gestão de eventos ***** -->
+    <link rel="stylesheet" type="text/css" href="public/eventos/gerenciar.css" />
+    <!--  CSS Main -->
+    <link rel="stylesheet" type="text/css" href="public/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/prm.css" />
+
+</head>
+<body>
+<!--[if lt IE 9]>
+<p class="browsehappy">Você está usando um navegador desatualizado. Por favor <strong><a href="http://browsehappy.com/" target="_blank">atualize o seu navegador</a></strong> para melhorar a sua experiência.</p>
+<![endif]-->
+
+<info-popup></info-popup>
+<evento-form></evento-form>
+<acao-em-massa-form></acao-em-massa-form>
+
+<div id="inicio" class="col-md-12 col-xs-12" ng-class="{'displayUp' :user.id < 0}" style="display: none">
+    <div ng-include="ajaxBusyIndicator"></div>
+</div>
+
+<section id="main-wrapper" class="theme-dark-full displayUp sidebar-mini" ng-class="{'displayUp' : true}" style="display: none">
+    <!-- Page wrapper -->
+
+    <div>
+        <div id="header" ng-include="header"></div>
+    </div>
+    <!-- Main content view  -->
+    <div ng-view></div>
+    <!--<div class="inner_wrapper">-->
+</section>
+
+<script src="assets/jquery/dist/jquery.min.js"></script>
+
+<!-- Angular -->
+<script type="text/javascript" src="assets/angular/angular.min.js"></script>
+<script type="text/javascript" src="assets/angular-ui-utils/ui-utils.js"></script>
+<script src="public/plugins/pace/pace.min.js"></script>
+<script src="public/js/moment-with-locales.min.js"></script>
+<script src="public/plugins/uiselect/dist/select.min.js"></script>
+<script src="assets/angular-route/angular-route.js"></script>
+<script src="assets/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="assets/angular-messages/angular-messages.min.js"></script>
+<script src="assets/angular-animate/angular-animate.min.js"></script>
+<script src="assets/angular-animate/angular-animate.min.js"></script>
+<script src="assets/angular-cookies/angular-cookies.min.js"></script>
+<script src="assets/angular-i18n/angular-locale_pt-pt.js"></script>
+<script src="assets/angular-mocks/angular-mocks.js"></script>
+<script src="assets/ng-table/dist/ng-table.min.js"></script>
+<script src="assets/checklist-model/checklist-model.js"></script>
+<script type="text/javascript"  src="assets/angular-bootstrap-show-errors/src/showErrors.min.js"></script>
+
+<!-- Plugins de efeito -->
+<script src="assets/angular-pnotify/src/angular-pnotify.js"></script>
+<script src="assets/angular-pines-notify/src/pnotify.js"></script>
+<script src="assets/pines-notify/src/pnotify.core.js"></script>
+<script src="assets/pines-notify/src/pnotify.buttons.js"></script>
+<script src="assets/pines-notify/src/pnotify.callbacks.js"></script>
+<script src="assets/pines-notify/src/pnotify.confirm.js"></script>
+<script src="assets/pines-notify/src/pnotify.desktop.js"></script>
+<script src="assets/pines-notify/src/pnotify.history.js"></script>
+<script src="assets/pines-notify/src/pnotify.nonblock.js"></script>
+<script src="assets/angular-validation-match/dist/angular-input-match.min.js"></script>
+<script src="assets/icheck/icheck.js"></script>
+
+
+<!-- Plugins de editores -->
+<script src="assets/ng-ckeditor/ng-ckeditor.min.js"></script>
+<script src="assets/ng-ckeditor/libs/ckeditor/ckeditor.js"></script>
+
+<script src="assets/highcharts-ng/dist/highcharts-ng.js"></script>
+<script src="public/plugins/gauge/gauge.min.js"></script>
+<script src="public/plugins/gauge/angular-gauge.min.js"></script>
+
+<script src="public/js/highcharts/highstock.src.js"></script>
+<script src="public/js/highcharts/funnel.js"></script>
+<script src="public/js/highcharts/customEvents.js"></script>
+<!--<script src="public/js/highcharts/highcharts-3d.js"></script>-->
+<!--<script src="public/js/highcharts/standalone-framework.js"></script>-->
+<!--<script src="public/js/highcharts/exporting.js"></script>-->
+
+
+<script src="assets/angular-base64-upload/dist/angular-base64-upload.min.js"></script>
+
+
+<script src="public/plugins/morris/raphael.js"></script>
+<script src="public/plugins/morris/morris.js"></script>
+
+<script src="assets/cpf_cnpj/build/cpf.js"></script>
+<script src="assets/cpf_cnpj/build/cnpj.js"></script>
+<script src="assets/angular-input-masks/angular-input-masks.br.min.js"></script>
+
+
+<!-- temporariamente copiado para dentro do sistema. Depois da nova versão,
+     utilizaremos o pacote do bower.
+     -->
+<script src="modules/prm/directives/ng-cpf-cnpj/lib/ngCpfCnpj.js"></script>
+
+
+<script src="public/plugins/bootstrap/ui-bootstrap-tpls-0.12.0.min.js"></script>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+<script src="assets/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="assets/jquery.maskedinput/dist/jquery.maskedinput.min.js"></script>
+<!-- Run application -->
+<script src="run.js"></script>
+
+<!-- Configuracoes de modulo -->
+
+<!-- Constantes de modulo -->
+<script src="modules/admin/constants.js"></script>
+
+<!-- Serviços -->
+<script type="text/javascript"  src="modules/admin/environment.js"></script>
+<script type="text/javascript"  src="modules/admin/services/gestaoCache.js"></script>
+<script type="text/javascript"  src="modules/admin/services/loginService.js"></script>
+<script type="text/javascript"  src="modules/admin/services/stringUtils.js"></script>
+<script type="text/javascript"  src="modules/admin/services/encerrarSessao.js"></script>
+<script type="text/javascript"  src="modules/prm/services/AppURLService.js"></script>
+
+
+<!-- Diretivas -->
+<script type="text/javascript"  src="modules/admin/directives/navbar-directive.js"></script>
+<!-- Filters -->
+<script type="text/javascript"  src="modules/filters/real-filter.js"></script>
+<script type="text/javascript"  src="modules/filters/first-upper-case-filter.js"></script>
+<script type="text/javascript"  src="modules/filters/data-amigavel-filter.js"></script>
+<script type="text/javascript"  src="modules/filters/truncar-filter.js"></script>
+<script type="text/javascript"  src="modules/filters/progess-bar-resumo-filter.js"></script>
+<script type="text/javascript"  src="modules/filters/timestamp-to-date-filter.js"></script>
+<script type="text/javascript"  src="modules/filters/tipo-evento-filter.js"></script>
+<script type="text/javascript"  src="modules/filters/props-filter.js"></script>
+<script type="text/javascript"  src="modules/filters/real-sem-centavos-filter.js"></script>
+<script type="text/javascript"  src="modules/filters/raw-html-filter.js"></script>
+
+<!-- Controller -->
+<script type="text/javascript"  src="modules/admin/controllers/404Controller.js"></script>
+<script type="text/javascript"  src="modules/admin/controllers/loginController.js"></script>
+<script type="text/javascript"  src="modules/prm/schoolApp/controller.js"></script>
+<script type="text/javascript"  src="modules/prm/schoolApp/directives/dashboard/dashboardController.js"></script>
+
+<!-- config app -->
+
+<!-- admin app-->
+<script type="text/javascript"  src="modules/prm/adminApp/controller.js"></script>
+<script type="text/javascript"  src="modules/prm/adminApp/directives/signUp/signUpController.js"></script>
+<!--admin app services -->
+<script type="text/javascript"  src="modules/prm/adminApp/services/signUpService.js"></script>
+
+
+<!-- nova organizacao controller -->
+
+
+
+<!-- utilidades diversas -->
+<script src="modules/diversos/ngConfirmClick.js"></script>
+<script src="modules/diversos/CrudBaseController.js"></script>
+<script src="modules/diversos/stickyNav.js"></script>
+<script src="modules/partials/templates.js"></script>
+<script src="modules/admin/config.js"></script>
+
+
+<!-- Feature detection -->
+<script src="public/js/modernizr-2.6.2.min.js"></script>
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="public/js/html5shiv.min.js"></script>
+<script src="public/js/respond.min.js"></script>
+<![endif]-->
+
+</body>
+</html>

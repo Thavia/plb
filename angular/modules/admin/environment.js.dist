@@ -1,0 +1,14 @@
+"use strict";
+
+angular.module('app.ENV', [])
+
+    .constant('ENV', {
+        name:'dev',
+        subdomain_default:'prm',
+        domain:'plb.dev',
+        app_login_protocolo:'http',
+        app_login_dominio:'plb.dev',
+        app_login_script:'login',
+        resource:'http://plb.dev',
+        resource_api_publica:'plb.dev'
+    });

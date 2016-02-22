@@ -1,0 +1,295 @@
+SECTION {
+    margin-bottom: 1.5em;
+}
+
+
+h2 {
+    margin-bottom: 0.8em;
+}
+
+
+h3 {
+    /*margin-bottom: 0.8em;*/
+}
+
+#empresa .panel-heading {
+    background-color: #27b6af;
+}
+
+#empresa .panel-heading H4 {
+    color: white;
+}
+
+
+#empresa .status {
+}
+
+#empresa .edit {
+    display: none;
+}
+
+
+.validacao_status UL.lista LI {
+    color: #e25d5d;
+}
+
+
+UL.status_messages{
+    padding: 0;
+    margin: 0;
+}
+
+UL.status_messages LI {
+    padding: 0;
+    margin: 0;
+    font-size: 0.8em;
+    color: red;
+    list-style: none;
+}
+
+
+
+
+
+#info_geral .info {
+    background: white;
+    padding: 0.5em;
+    font-size: 0.8em;
+}
+
+
+#esforco_acoes_menu {
+    position: relative;
+}
+
+#esforco_acoes_menu .mais_menu {
+    position: absolute;
+    display: none;
+    right: 0;
+    top: 2em;
+    z-index: 1000;
+    background: #909aa0;
+    border: 1px solid #aaa;
+    padding:  0.2em 0.8em;
+}
+
+#esforco_acoes_menu .mais_menu UL, #esforco_acoes_menu .mais_menu LI {
+    padding: 0;
+    margin: 0;
+}
+
+#esforco_acoes_menu .mais_menu LI {
+    list-style: none;
+    padding: 0.2em 0;
+    border-bottom: 1px  solid #ddd;
+}
+
+#esforco_acoes_menu .mais_menu LI A {
+    color: white;
+    text-transform: none;
+    font-size: 0.8em;
+}
+
+
+#esforco_acoes_menu .mais_menu LI.last {
+    border-bottom: none;
+}
+
+#funil_evolucao UL {
+    margin: 0;
+    padding: 0;
+}
+
+
+#funil_evolucao LI {
+    list-style: none;
+    text-align: center;
+    background-color: #f6f8f8;
+    padding: 0.5em;
+    margin-bottom: 2px;
+    width: 100%;
+    border: 1px solid #dce0e6;
+}
+
+
+#funil_evolucao .titulo {
+    font-weight: bold;
+}
+
+#funil_evolucao .sep {
+    line-height: 4em;
+    text-align: center;
+    float: left;
+}
+
+
+#funil_evolucao LI.last .sep {
+    display: none;
+}
+
+#funil_evolucao li.first {
+
+    color: #585858;
+    background-color: #fff;
+    border-bottom: 5px solid #ff6e19;
+    text-decoration: none;
+}
+
+#etiquetas span.item {
+      position: relative;
+      border-radius: 2px;
+      font-size: 80% !important;
+      margin-bottom: 1px !important;
+      margin-right: 1px !important;
+      padding: 0.1em 1.2em !important;
+      background: #91b8d0;
+      color: white;
+      display: inline-block;
+}
+
+
+#etiquetas span.item .actions {
+    position: absolute;
+    top: 0;
+    right:0;
+    display: none;
+}
+
+#etiquetas span.item:hover .actions {
+    display: block;
+}
+
+
+
+.contatos .principal {
+    color: #aaa;
+}
+
+
+.contatos .principal {
+    color: #ccc;
+}
+
+
+.contatos .principal.ativo {
+    color: #FFD700;
+}
+
+
+.contatos .details {
+    display: none;
+}
+
+.contatos LI {
+    cursor: pointer;
+}
+
+.usuarios_ad LI {
+    border-bottom: 0.05em solid #ccc;
+}
+
+
+
+.demais_contatos TD {
+}
+
+.demais_contatos LABEL {
+    font-weight: normal !important;
+    display: block;
+    height: 3.5em;
+}
+
+
+
+
+
+#side_bar1 FORM {
+    font-size: 0.8em;
+}
+
+
+#side_bar1 FORM DIV.row > DIV {
+    margin-bottom: 0.2em;
+}
+
+#side_bar1 INPUT {
+    font-size: 1em;
+    padding: 0 0.5em;
+}
+
+
+/* listagem de eventos */
+.eventos .item {
+
+}
+
+.eventos_caixa * {
+    text-transform: none;
+}
+
+.eventos_caixa H3.titulo {
+    display: block;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #aaa;
+}
+
+.eventos .quando {
+    font-size: 1em;
+}
+
+.eventos .quando .horario {
+    font-size: 0.8em;
+}
+
+.eventos .quem {
+}
+
+.eventos .descricao {
+    font-size: 0.8em;
+    white-space: pre-line;
+}
+
+.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+
+
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+}
+.rating .filled {
+    color: #F46F02;
+}
+
+ul.rating-dashboard {
+    display: inline-block;
+}
+.rating-dashboard li{
+
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+    position: relative;
+}
+
+.rating-dashboard
+{
+    color: #F46F02;
+}
+
+

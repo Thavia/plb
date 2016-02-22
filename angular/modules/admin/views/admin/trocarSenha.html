@@ -1,0 +1,89 @@
+<div class="row" ng-controller="trocarController as ctrl">
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3"></div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+
+
+        <div class="panel widget-mini widget-mini funil">
+            <div class="header">
+                <i class="fa fa-key"></i> <strong>Trocar senha</strong>
+
+            </div>
+            <form name="trocarSenhaForm" ng-model="ctrl.trocarSenhaForm" ng-submit="ctrl.alterarSenha(trocarSenhaForm)">
+            <div class="panel-body">
+
+
+                <div class="row">
+                    <div class="form-group col-md-12 has-error" ng-show="erroDeProcessamento == true">
+                        <p  class="help-block">
+                            Houve um problema de comunicação tente novamente mais tarde.
+                        </p>
+                    </div>
+                </div>
+                    <div class="row">
+                    <div class="form-group col-md-12" ng-class="{ 'has-error' : trocarSenhaForm.senhaAtual.$invalid && !trocarSenhaForm.senhaAtual.$pristine }">
+                        <label for="nome">Senha atual *</label>
+                        <input type="password" required class="form-control" id="senhaAtual" name="senhaAtual"
+                               ng-model="ctrl.trocarSenhaForm.senhaAtual"
+                               ng-minlength="4" >
+                        <p ng-show="trocarSenhaForm.senhaAtual.$invalid && !trocarSenhaForm.senhaAtual.$pristine && !trocarSenhaForm.senhaAtual.$error.server && !trocarSenhaForm.senhaAtual.$error.minlength" class="help-block">Preencha a senha atual.</p>
+                        <p ng-show="trocarSenhaForm.senhaAtual.$error.server && !trocarSenhaForm.senhaAtual.$pristine" class="help-block">
+                            {{ ctrl.alteraSenhaFormServerMessage('senhaAtual') }}
+                        </p>
+                        <p ng-show="trocarSenhaForm.senhaAtual.$error.minlength && !trocarSenhaForm.senhaAtual.$pristine" class="help-block">O campo senha deve ter no minimo 4 caracteres.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6" ng-class="{ 'has-error' : trocarSenhaForm.novaSenha.$invalid && !trocarSenhaForm.novaSenha.$pristine }">
+                        <label for="novaSenha">Nova senha *</label>
+                        <input type="password" required class="form-control" id="nome" name="novaSenha"
+                               ng-model="ctrl.trocarSenhaForm.novaSenha"
+                               ng-minlength="5">
+
+                        <p ng-show="trocarSenhaForm.novaSenha.$invalid && !trocarSenhaForm.novaSenha.$pristine && !trocarSenhaForm.novaSenha.$error.minlength" class="help-block">Preencha nova senha.</p>
+                        <p ng-show="trocarSenhaForm.novaSenha.$error.minlength && !trocarSenhaForm.novaSenha.$pristine" class="help-block">Nova senha deve ter no minimo 5 caracteres.</p>
+
+
+                    </div>
+
+
+                    <div class="form-group col-md-6" ng-class="{ 'has-error' : trocarSenhaForm.repita.$invalid && !trocarSenhaForm.repita.$pristine }">
+                        <label for="novaSenha">Repita *</label>
+                        <input type="password" required class="form-control" id="repita" name="repita"
+                               data-match="ctrl.trocarSenhaForm.novaSenha"
+                               ng-model="ctrl.trocarSenhaForm.repita">
+
+                        <p ng-show="trocarSenhaForm.repita.$invalid && !trocarSenhaForm.repita.$pristine && !trocarSenhaForm.repita.$error.match" class="help-block">Repita sua senha.</p>
+                        <p ng-show="!trocarSenhaForm.repita.$pristine && trocarSenhaForm.repita.$error.match" class="help-block">Confirmação inválida.</p>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div  class="modal-footer">
+
+                <button
+                        type="submit"
+                        class="btn btn-primary"
+                        ng-disabled="trocarSenhaForm.$invalid && !trocarSenhaForm.senhaAtual.$error.server"
+                        ><i class="fa fa-floppy-o"></i> Alterar</button>
+                <!--<button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Concluir</button>-->
+                <button type="button" class="btn btn-default" data-dismiss="modal"
+                        ng-click="ctrl.cancelar()"
+                       ><i class="fa fa-ban"></i> Cancelar</button>
+            </div>
+            </form>
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3"></div>
+
+
+
+
+</div>

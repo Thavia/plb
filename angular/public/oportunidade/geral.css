@@ -1,0 +1,440 @@
+body {
+    color: #565656;
+    background: #F0F3F3;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 100%;
+    padding: 0px;
+    margin: 0px;
+    min-height: 100%;
+    position: relative;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+label {
+    font-weight: 100;
+}
+
+
+DIV.checkbox {
+    padding-top: 1.5em;
+}
+
+DIV.checkbox LABEL {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-weight: 700;
+}
+
+
+.form-control {
+    border: 1px solid #dce0e6;
+}
+
+.actionable {
+    position: relative;
+}
+
+
+.actionable .actions {
+
+    position: absolute;
+    font-size: 1.0em;
+    top: 0;
+    right: 0;
+    padding: 0.5em;
+
+}
+
+
+.panel-info > .actionable .actions {
+
+
+    border: none;
+    padding: 0.5em;
+}
+
+.btn-laranja, .btn-info, .btn-info, a.btn-info:link, a.btn-info:visited
+{
+
+    color: #f2f2f2!important;
+    background-color: #FF6E19!important;
+    border-color: #FF6E19;
+
+
+}
+
+
+
+
+.ng-table th.sortable.sort-desc, .ng-table th.sortable.sort-asc {
+    background-color: #f2f2f2 !important;
+   }
+
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+    z-index: 2;
+    color: #333;
+    cursor: default;
+    background-color: #f2f2f2;
+    border-color: #f2f2f2;
+}
+
+.pagination>li>a:hover, .pagination>li>span:hover, .pagination>li>a:focus, .pagination>li>span:focus {
+    color: #333;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.btn-warning
+
+{
+
+    background-color: #b24200;
+    border-color: #b24200;
+}
+
+.btn-black {
+    color: #f2f2f2!important;
+    background-color: #565656;
+}
+
+.btn-black:hover {
+    color: #f2f2f2!important;
+    background-color: #FF6E19;
+}
+
+.actionable:hover .actions {
+    display: block;
+    font-size: 0.9em;
+}
+
+.actions .excluir {
+    color: red !important;
+}
+
+
+
+
+
+UL.simple_list {
+    margin: 0;
+    padding: 0;
+}
+
+UL.simple_list  LI {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.simple_list .details {
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: 1em;
+    opacity: 0.8;
+}
+
+.label-warning {
+
+    background-color: #b24200;
+    font-size: 0.8em;
+
+
+}
+
+.label-danger{
+
+
+    font-size: 0.8em;
+
+
+}
+
+.alert-info-templum
+
+{
+    background-color: #EDEFEF;
+
+
+
+}
+
+
+
+.error_container {
+    display: block;
+    min-height: 1.3em;
+    margin-top: 0.3em;
+}
+
+
+.error_container .error {
+    color: red;
+    font-size: 0.8em;
+}
+
+
+.details_hidden {
+    position: relative;
+}
+
+.details_hidden .details {
+    display: none;
+}
+
+.details_hidden:hover .details {
+    display: block;
+}
+
+.details_show .details {
+    display: block !important;
+}
+
+
+
+label.tipo_evento {
+    display: inline-block;
+    margin-right: 0.5em;
+    font-size: 0.7em;
+    padding: 0.4em;
+}
+
+label.tipo_evento_filtro {
+    display: inline-block;
+    margin-right: 0.1em;
+    font-size: 0.7em;
+    padding: 0.2em;
+}
+
+.btn.btn-novo {
+    background-color: #6FBFE4;
+    color: #FFF;
+}
+
+/** retira bordas de colunas do bootstrap descendentes https://scotch.io/bar-talk/bootstrap-3-tips-and-tricks-you-still-might-not-know **/
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+
+/* FUNIL DE VENDAS */
+
+.funil-etapas {
+
+}
+
+.funil-etapas .funil-etapa {
+
+    /*width: 11.8em; /!* @todo: por media query pra nao interferir qdo tamanho da janela é q limite do col-sm (pq ai o col-sm-12 assumiria)*!/*/
+}
+
+.funil-etapa .etapa-txt-qtd {
+    font-weight: 700;
+    font-size: 1.3em;
+    text-align: center;
+    display: block;
+}
+
+.funil-etapa .etapa-txt-titulo {
+    font-weight: 700;
+    font-size: 0.8em;
+    text-align: center;
+    display: block;
+}
+.funil-etapa .etapa-txt-montante {
+    font-weight: 300;
+    font-size: 0.8em;
+    text-align: center;
+    display: block;
+}
+
+.funil-mini {
+    position: relative;
+}
+
+
+.funil-painel {
+    min-height: 140px;
+    /* min-width: 100px; */
+    padding: 25px 0px 25px 0px;
+    margin-bottom: 15px;
+    border-right: 1px solid #d9d9d9;
+    border-top: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    border-bottom: 5px solid #d9d9d9;
+
+}
+
+.funil-painel-total{
+    color: #585858;
+    background-color: #fff;
+    border-right: 1px solid #d9d9d9;
+    border-top: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+    border-bottom: 5px solid #d9d9d9;
+    /*background-color: rgba(75, 116, 115, 1);*/
+}
+
+.funil-painel-ok{
+    color: #585858;
+    background-color: #fff;
+    border-color: #d9d9d9;
+}
+
+
+.filtroAvancadoComponentes{
+    width: 95% !important;
+    margin-bottom: 10px !important;
+
+}
+
+.funil-painel-total:hover{
+    cursor: pointer;
+    color: #585858;
+    background-color: #f6f8f8;
+    border-color: #dce0e6;
+    text-decoration: none;
+}
+.funil-painel-ok:hover{
+    cursor: pointer;
+    color: #585858;
+    background-color: #dce0e6;
+    border-color: #dce0e6;
+    text-decoration: none;
+
+}
+
+.etapa-selecionada{
+
+    cursor: pointer;
+    color: #585858;
+    background-color: #fff;
+    border-bottom:5px solid #ff6e19;
+
+    text-decoration: none;
+    /*outline: 10px auto -webkit-focus-ring-color;*/
+    /*outline-offset: -2px;*/
+    /*box-shadow: inset 0 1px 1px rgba(217, 237, 247, 1), 0 0 23px rgba(2, 143, 255, 1);*/
+}
+
+.funil-painel-total .total {
+    font-size: 1.3em;
+    display: block;
+    font-weight: 300;
+}
+.funil-painel-total .status {
+    font-size: 0.8em;
+    display: block;
+    font-weight: 300;
+}
+
+.funil-painel-ok .status {
+    font-size: 0.8em;
+    display: block;
+    font-weight: 300;
+}
+
+.funil-painel-ok .total {
+    font-size: 1.3em;
+    display: block;
+    font-weight: 300;
+}
+
+
+.grid {
+    position: relative;
+}
+
+.label-primary {
+
+    color:#585858;
+    background-color: #f2f2f2;
+    font-size: 11px;
+
+}
+
+
+.batch {
+    position: fixed;
+    left: 3em;
+    padding: 0.5em;
+    border: 1px solid #31708f;
+    border-radius: 5px;
+    color: #31708f;
+    background-color: #E3F0F6;
+    width: 80%;
+    z-index: 10;
+}
+
+.controls-fixed{
+    background-color:rgba(0, 0, 0, 0.1);
+    bottom:0;
+    left:0;
+    padding:10px 15px;
+    position:fixed;
+    top:auto;
+    width:100%;
+}
+.grid .navbar {
+    min-height: 43px;
+}
+.batch > ul > li > span
+{
+    line-height: 28px;
+    padding: 0px 5px 0px 13px;
+}
+
+.bg-metadados {
+    position: relative;
+    border-radius: 5px;
+    font-size: 80% !important;
+    margin-bottom: 5px !important;
+    margin-right: 2px !important;
+    color: #fff;
+    background-color: #337ab7;
+    padding: 0px 4px 4px 12px;
+    /* display: inline-block; */
+}
+.bg-metadados .btn-danger,
+.list-group-item-info .btn-danger{
+    display: none;
+}
+.bg-metadados:hover .btn-danger,
+.list-group-item-info:hover .btn-danger {
+    display: block;
+
+}
+
+
+.ng-table-header
+{
+    text-align: left;
+    font-size: 13px;
+
+}
+
+.subinfo {
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+
+
+.select2-result-label .subinfo {
+    color: #BDBDBD;
+}
+
+.filtroBasico {
+    margin-bottom: 2em;
+}
+
+
+.filtroAvancado {
+    font-size: 0.8em
+}
+
+.ng-table-header
+
+
+

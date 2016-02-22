@@ -1,0 +1,210 @@
+.inner_wrapper {
+
+    padding: 5px;
+    text-align: left;
+    margin: 0 auto;
+}
+.ajax-busy-indicator {
+
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    z-index:1001;
+    background-color: black;
+    -webkit-transition:all .3s ease;
+    -moz-transition:all .3s ease;
+    -o-transition:all .3s ease;
+    transition:all .3s ease;
+    display:none;
+    opacity:.7;
+    text-align:center;
+    overflow: visible;
+
+
+}
+
+.ajax-busy-indicator-show{
+    display:block;
+}
+
+.ajax-busy-indicator-hide{
+    display:none;
+}
+
+.ajax-busy-indicator-text{
+    margin: 12% 0px 0px 45%;
+    font-size: 16px;
+    color: white;
+    text-align: left;
+    max-width: 1000px;
+    width: 80%;
+    font-weight: bold;
+
+}
+
+#squaresWaveG{
+    position:relative;
+    width:400px;
+    height:29px}
+
+.squaresWaveG{
+    position:absolute;
+    top:0;
+    background-color:#FFFFFF;
+    width:29px;
+    height:29px;
+    -moz-animation-name:bounce_squaresWaveG;
+    -moz-animation-duration:1.3s;
+    -moz-animation-iteration-count:infinite;
+    -moz-animation-direction:linear;
+    -webkit-animation-name:bounce_squaresWaveG;
+    -webkit-animation-duration:1.3s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-direction:linear;
+    -ms-animation-name:bounce_squaresWaveG;
+    -ms-animation-duration:1.3s;
+    -ms-animation-iteration-count:infinite;
+    -ms-animation-direction:linear;
+    -o-animation-name:bounce_squaresWaveG;
+    -o-animation-duration:1.3s;
+    -o-animation-iteration-count:infinite;
+    -o-animation-direction:linear;
+    animation-name:bounce_squaresWaveG;
+    animation-duration:1.3s;
+    animation-iteration-count:infinite;
+    animation-direction:linear;
+}
+
+#squaresWaveG_1{
+    left:0;
+    -moz-animation-delay:1.43s;
+    -webkit-animation-delay:1.43s;
+    -ms-animation-delay:1.43s;
+    -o-animation-delay:1.43s;
+    animation-delay:1.43s;
+}
+
+#squaresWaveG_2{
+    left:30px;
+    -moz-animation-delay:1.3s;
+    -webkit-animation-delay:1.3s;
+    -ms-animation-delay:1.3s;
+    -o-animation-delay:1.3s;
+    animation-delay:1.3s;
+}
+
+#squaresWaveG_3{
+    left:60px;
+    -moz-animation-delay:1.17s;
+    -webkit-animation-delay:1.17s;
+    -ms-animation-delay:1.17s;
+    -o-animation-delay:1.17s;
+    animation-delay:1.17s;
+}
+
+#squaresWaveG_4{
+    left:90px;
+    -moz-animation-delay:1.04s;
+    -webkit-animation-delay:1.04s;
+    -ms-animation-delay:1.04s;
+    -o-animation-delay:1.04s;
+    animation-delay:1.04s;
+}
+
+#squaresWaveG_5{
+    left:120px;
+    -moz-animation-delay:0.91s;
+    -webkit-animation-delay:0.91s;
+    -ms-animation-delay:0.91s;
+    -o-animation-delay:0.91s;
+    animation-delay:0.91s;
+}
+
+#squaresWaveG_6{
+    left:150px;
+    -moz-animation-delay:0.78s;
+    -webkit-animation-delay:0.78s;
+    -ms-animation-delay:0.78s;
+    -o-animation-delay:0.78s;
+    animation-delay:0.78s;
+}
+
+#squaresWaveG_7{
+    left:180px;
+    -moz-animation-delay:0.65s;
+    -webkit-animation-delay:0.65s;
+    -ms-animation-delay:0.65s;
+    -o-animation-delay:0.65s;
+    animation-delay:0.65s;
+}
+
+#squaresWaveG_8{
+    left:210px;
+    -moz-animation-delay:0.52s;
+    -webkit-animation-delay:0.52s;
+    -ms-animation-delay:0.52s;
+    -o-animation-delay:0.52s;
+    animation-delay:0.52s;
+}
+
+@-moz-keyframes bounce_squaresWaveG{
+    0%{
+        background-color:#FFFFFF;
+    }
+
+    100%{
+        background-color:#000000;
+    }
+
+}
+
+@-webkit-keyframes bounce_squaresWaveG{
+    0%{
+        background-color:#FFFFFF;
+    }
+
+    100%{
+        background-color:#000000;
+    }
+
+}
+
+@-ms-keyframes bounce_squaresWaveG{
+    0%{
+        background-color:#FFFFFF;
+    }
+
+    100%{
+        background-color:#000000;
+    }
+
+}
+
+@-o-keyframes bounce_squaresWaveG{
+    0%{
+        background-color:#FFFFFF;
+    }
+
+    100%{
+        background-color:#000000;
+    }
+
+}
+
+@keyframes bounce_squaresWaveG{
+    0%{
+        background-color:#FFFFFF;
+    }
+
+    100%{
+        background-color:#000000;
+    }
+
+}
+
+.nav .chaged>a, .nav .chaged>a:hover, .nav .chaged>a:focus {
+    background-color: #eee;
+    border-color: #b7591d;
+}

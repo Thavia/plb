@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - @10.0.1.50" uuid="13e2f537-accd-4a58-a978-5cbb8b4010aa">
+    <database-info product="MySQL" version="5.5.46-0ubuntu0.14.04.2" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="sistema"/>
+    <table name="sys_agenda" schema="" catalog="sistema" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="titulo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="data" sqlType="DATETIME" precision="19" scale="0" nullable="false" jdbcType="93"/>
+      <column name="date_created" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="tipo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="observacoes" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="sys_agenda_participantes_ibfk_2" table="sys_agenda_participantes" schema="" catalog="sistema" columns="fk_evento"/>
+      <index name="unique_id" unique="true" columns="id"/>
+    </table>
+    <table name="sys_agenda_participantes" schema="" catalog="sistema" type="TABLE">
+      <column name="fk_user" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="fk_evento" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <foreign-key name="sys_agenda_participantes_ibfk_1" columns="fk_user" ref-table="sys_users" ref-schema="" ref-catalog="sistema" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="sys_agenda_participantes_ibfk_2" columns="fk_evento" ref-table="sys_agenda" ref-schema="" ref-catalog="sistema" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
+    <table name="sys_boleto_fatura" schema="" catalog="sistema" type="TABLE">
+      <column name="boleto" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="fk_fatura" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="sys_curso_material" schema="" catalog="sistema" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fk_curso" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="filename" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="filepath" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="filename_encrypted" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date_created" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="tipo" sqlType="VARCHAR" precision="244" scale="0" nullable="false" jdbcType="12"/>
+      <column name="link" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="unique_id" unique="true" columns="id"/>
+    </table>
+    <table name="sys_cursos" schema="" catalog="sistema" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="nome" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="descricao" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="true" jdbcType="-1"/>
+      <column name="duracao" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="valor" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="plano_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="sys_cursos_usuarios_ibfk_2" table="sys_cursos_usuarios" schema="" catalog="sistema" columns="fk_curso"/>
+      <index name="unique_id" unique="true" columns="id"/>
+    </table>
+    <table name="sys_cursos_usuarios" schema="" catalog="sistema" type="TABLE">
+      <column name="fk_curso" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="fk_user" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="forma_pagamento" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="duracao" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="subs_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="notify_token" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="sys_cursos_usuarios_ibfk_2" columns="fk_curso" ref-table="sys_cursos" ref-schema="" ref-catalog="sistema" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="sys_cursos_usuarios_ibfk_3" columns="fk_user" ref-table="sys_users" ref-schema="" ref-catalog="sistema" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="unique_id" unique="true" columns="id"/>
+    </table>
+    <table name="sys_faturas" schema="" catalog="sistema" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fk_user" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="valor" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="data_vencimento" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="fk_matricula" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="date_created" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="forma_pagamento" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="charge_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="unique_id" unique="true" columns="id"/>
+    </table>
+    <table name="sys_notificacao_token" schema="" catalog="sistema" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="token" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_created" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+    </table>
+    <table name="sys_options" schema="" catalog="sistema" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="key" sqlType="CHAR" precision="255" scale="0" nullable="false" jdbcType="1"/>
+      <column name="values" sqlType="LONGTEXT" precision="2147483647" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="status" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" def="MQ=="/>
+      <primary-key name="PRIMARY" columns="id"/>
+    </table>
+    <table name="sys_user_payment_token" schema="" catalog="sistema" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="token" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="card_mask" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="date_created" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <column name="fk_user" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="fk_matricula" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="unique_id" unique="true" columns="id"/>
+    </table>
+    <table name="sys_users" schema="" catalog="sistema" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fk_grupo" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="username" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="status" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date_created" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA="/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="sys_users_ibfk_1" columns="fk_grupo" ref-table="sys_users_grupo" ref-schema="" ref-catalog="sistema" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="sys_agenda_participantes_ibfk_1" table="sys_agenda_participantes" schema="" catalog="sistema" columns="fk_user"/>
+      <exported-key name="sys_cursos_usuarios_ibfk_3" table="sys_cursos_usuarios" schema="" catalog="sistema" columns="fk_user"/>
+      <exported-key name="sys_users_perfil_ibfk_1" table="sys_users_perfil" schema="" catalog="sistema" columns="fk_user"/>
+      <index name="unique_id" unique="true" columns="id"/>
+    </table>
+    <table name="sys_users_grupo" schema="" catalog="sistema" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="role" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="sys_users_ibfk_1" table="sys_users" schema="" catalog="sistema" columns="fk_grupo"/>
+      <index name="unique_id" unique="true" columns="id"/>
+    </table>
+    <table name="sys_users_perfil" schema="" catalog="sistema" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fk_user" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="nome" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="rg" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cpf" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="endereco" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cep" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="data_nascimento" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="date_update" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="avatar" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="gender" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="facebook" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="telefone1" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="telefone2" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="telefone3" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="cidade" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="bairro" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="estado" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="pessoa_tipo" sqlType="VARCHAR" precision="10" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="sys_users_perfil_ibfk_1" columns="fk_user" ref-table="sys_users" ref-schema="" ref-catalog="sistema" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="unique_fk_user" unique="true" columns="fk_user"/>
+      <index name="unique_id" unique="true" columns="id"/>
+    </table>
+  </data-source>
+</component>

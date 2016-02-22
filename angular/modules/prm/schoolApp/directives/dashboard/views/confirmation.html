@@ -1,0 +1,67 @@
+<div ng-init="userController.getSubscriptionStatus(1300)"></div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="panel">
+            <div class="panel-heading actionable">
+
+                <h3> Olá, {{ formEditarModel.nome }}</h3>
+
+            </div>
+
+
+            <div class="panel-body">
+
+
+                <h3>{{ subscription.plan.name }} </h3>
+                <br>
+                <ul class="list-inline">
+
+                    <li>Matricula Nº: {{ subscription.custom_id }}</li>
+                    <li>Duração: {{subscription.plan.repeats}} meses</li>
+                    <li>Próximo Vencimento: {{subscription.next_execution | date:'dd/MM/yyyy' }}</li>
+
+
+                </ul>
+
+            </div>
+
+            <div class="panel-body">
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Transação</th>
+                        <th>Valor</th>
+                        <th>Gerada Em</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr data-ng-repeat="history in subscription.history">
+
+                        <td data-title="'Transação'">
+                            {{history.charge_id}}
+                        </td>
+
+                        <td data-title="'Transação'">
+                            {{subscription.value | real }}
+                        </td>
+
+                        <td data-title="Gerado Em">
+
+                            {{ history.created_at | dataAmigavel }}
+
+                        </td>
+
+                        <td data-title="'Status'">
+                            {{history.status | pagamentoStatus}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+</div>
