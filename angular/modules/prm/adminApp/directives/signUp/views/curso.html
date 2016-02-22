@@ -1,0 +1,91 @@
+<form name="formEdit" class="form-horizontal">
+    <div ng-init="defineEditForm(formEdit)"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3><i class="fa fa-user"></i> Passo 2: Escolha seu curso</h3>
+            <br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 form-group">
+
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Curso:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+
+                    <ui-select ng-model="cursoModel.curso" name="curso" theme="select2" ng-disabled="disabled" style="min-width: 100%" reset-search-input="false" ng-attr-required="required" on-select="userController.carregaCursoDescricao($item)">
+                        <ui-select-match  placeholder="selecione">{{$select.selected.nome }}</ui-select-match>
+
+                        <ui-select-choices repeat="curso.id as curso in cursosList">
+                            <span ng-bind-html="curso.nome| highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+
+                </div>
+
+           </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Duração:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+
+                    <ui-select ng-model="cursoModel.duracao" name="curso" theme="select2" ng-disabled="disabled" style="min-width: 100%" reset-search-input="false" ng-attr-required="required">
+                        <ui-select-match  placeholder="selecione">{{$select.selected.nome }}</ui-select-match>
+
+                        <ui-select-choices repeat="curso.id as curso in duracaoList">
+                            <span ng-bind-html="curso.nome| highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+
+
+                <div class="error_container">
+                    <div class="error"
+                         ng-show="formEdit.duracao.$invalid && formEdit.duracao.$dirty && !formEdit.duracao.$error.server">
+                        Selecione uma Duração para seu curso
+                    </div>
+
+                    <div class="error" ng-show="formEdit.duracao.$error.server && formEdit.duracao.$dirty">
+                        {{ mensagemValidacaoServidor('nome') }}
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label"></label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+                    <br>
+                   <span class="pull-right">  <button class="btn btn-primary" ng-click="userController.addCurso()" ng-enter="userController.addCurso()"
+                                                      ng-disabled="formEdit.$invalid">
+                       Prosseguir!
+
+                   </button></span>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+        <div class="col-md-4">
+            <h3>{{cursoSelecionado.titulo}}</h3>
+
+
+            <span ng-bind-html="cursoSelecionado.descricao"></span>
+
+
+
+        </div>
+    </div>
+
+</form>
+
+
+

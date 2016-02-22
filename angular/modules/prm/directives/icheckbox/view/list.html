@@ -1,0 +1,6 @@
+<ul class="icheckbox_container {{ class }}" id="{{ id }}">
+    <li ng-repeat="choice in choices track by $index">
+        <input type="{{ type }}" value="{{ choice.value }}" id="{{ name }}{{ $index }}" name="{{ name }}" icheck ng-checked="{{ isValueSelected(choice.value) }}">
+        <label for="{{ name }}{{ $index }}">{{ choice.label }}</label>
+    </li>
+</ul>

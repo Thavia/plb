@@ -7,9 +7,9 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 config.vm.box = "ubuntu/trusty64"
   config.vm.provision :shell, :path => "bootstrap.sh"
-  config.vm.network :forwarded_port, host: 3010, guest: 80
+  config.vm.network :forwarded_port, host: 3020, guest: 80
   config.vm.network :forwarded_port, host: 8020, guest: 8015
-  config.vm.network :forwarded_port, host: 3301, guest: 3306
+  config.vm.network :forwarded_port, host: 33020, guest: 3306
 
   #config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__auto: true, rsync__exclude: [".git/"]
   config.vm.synced_folder ".", "/vagrant", type: "nfs"
@@ -39,7 +39,7 @@ config.vm.box = "ubuntu/trusty64"
     config.hostmanager.manage_host = true
     config.hostmanager.ignore_private_ip = false
     config.hostmanager.include_offline = true
-    config.hostmanager.aliases = 'plb.dev'
+    config.hostmanager.aliases = 'plb.dev *.plb.dev'
     #config.vm.define 'example-box' do |node|
     #  node.vm.hostname = 'example-box-hostname'
     #  node.vm.network :private_network, ip: '192.168.42.42'

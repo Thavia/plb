@@ -1,0 +1,30 @@
+<div ng-controller="schoolAppController">
+    <!-- Left Sidebar Navigation -->
+       <aside class="sidebar sidebar-left">
+        <nav>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="nav-dropdown" ng-class="conteudoPrincipalModo=='dashboard'? 'active' : ''">
+                    <a href="#"  ng-click="conteudoPrincipalModoMudar('dashboard')">
+                        <i class="fa fa-desktop"></i> Dashboard
+                    </a>
+                </li>
+
+            </ul>
+        </nav>
+    </aside>
+
+    <section class="main-content-wrapper">
+        <div class="pageheader">
+            <h1>{{ conteudoPrincipalTitulo }}</h1>
+
+        </div>
+
+        <section id="main-content" class="animated fadeInRight">
+
+
+            <ng-include src="'modules/prm/schoolApp/views/conteudoPrincipal.html'"></ng-include>
+
+        </section>
+
+    </section>
+</div>

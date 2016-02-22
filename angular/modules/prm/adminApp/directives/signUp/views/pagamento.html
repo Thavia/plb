@@ -1,0 +1,151 @@
+<form name="formPagamento" class="form-horizontal">
+    <div ng-init="defineEditForm(formPagamento)"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <h3><i class="fa fa-credit-card"></i> Passo 3: Escolha sua forma de pagamento</h3>
+            <br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 form-group">
+
+
+            <div class="form-group">
+                <label class="col-sm-3 col-lg-4 control-label">Forma de Pagamento:</label>
+
+                <div class="col-sm-8 col-lg-6 controls">
+
+                    <ui-select ng-model="pagamentoModel.forma" name="forma" theme="select2" ng-disabled="disabled" style="min-width: 100%" reset-search-input="false" ng-attr-required="required">
+                        <ui-select-match  placeholder="selecione">{{$select.selected.nome }}</ui-select-match>
+
+                        <ui-select-choices repeat="forma.id as forma in formasDePagamento">
+                            <span ng-bind-html="forma.nome| highlight: $select.search"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                    <br><br>
+                </div>
+
+           </div>
+
+
+            <div ng-if="pagamentoModel.forma == 1">
+                <br>
+                <h3 class="text-center"> Cartão de Crédito</h3>
+            <br> <br>
+                <div class="form-group">
+                    <label class="col-sm-3 col-lg-4 control-label">Bandeira</label>
+                    <div class="col-sm-8 col-lg-6 controls">
+                        <select name="brand" id="brand" class="form-control" ng-model="pagamentoModel.cc.brand" required>
+                            <option>Selecione</option>
+                            <option value="master">MasterCard</option>
+                            <option value="visa">VISA</option>
+                            <option value="amex">American Express</option>
+                            <option value="diners">Diners</option>
+                            <option value="discover">Discover</option>
+                            <option value="jcb">JCB</option>
+                            <option value="elo">Elo</option>
+                            <option value="aura">Aura</option>
+                        </select>
+
+                        <div class="error_container">
+                            <div class="error"
+                                 ng-show="formPagamento.brand.$invalid && formPagamento.brand.$dirty && !formPagamento.brand.$error.server">
+                                selecione a bandeira do seu cartão
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-3 col-lg-4 control-label">Número</label>
+                    <div class="col-sm-8 col-lg-6 controls">
+                        <input type="text" class="form-control"
+                               id="number" name="number" ng-model="pagamentoModel.cc.number" ui-mask="9999 9999 9999 9999" ng-minlenght="16" required>
+                    </div>
+
+                    <div class="error_container">
+                        <div class="error"
+                             ng-show="formPagamento.number.$invalid && formPagamento.number.$dirty && !formPagamento.number.$error.server">
+                            deve ter pelo menos 16 numeros
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-sm-3 col-lg-4 control-label">CVV</label>
+                    <div class="col-sm-8 col-lg-6 controls">
+                        <input type="text" class="form-control"
+                               ng-model="pagamentoModel.cc.cvv" id="cvv" name="cvv" maxlength="3" ng-minlenght="3" required>
+                    </div>
+                    <div class="error_container">
+                        <div class="error"
+                             ng-show="formPagamento.cvv.$invalid && formPagamento.cvv.$dirty && !formPagamento.cvv.$error.server">
+                            deve ter 3 digitos
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="form-group">
+                    <label class="col-sm-3 col-lg-4 control-label">Validade</label>
+                    <div class="col-sm-12 col-lg-6 controls">
+                        <input type="text" class="form-control"
+                               ng-model="pagamentoModel.cc.expiration" name="expiration" ui-mask="99/9999" ng-minlenght="6" required>
+
+                        <div class="error_container">
+                            <div class="error"
+                                 ng-show="formPagamento.expiration.$invalid && formPagamento.expiration.$dirty && !formPagamento.expiration.$error.server">
+                                digite a data no formato mm/aaaa
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-3 col-lg-4 control-label"></label>
+
+                    <div class="col-sm-8 col-lg-6 controls">
+                        <br>
+                   <span class="pull-right">
+                       <button class="btn btn-primary" ng-click="userController.processarPagamento()"
+                               ng-disabled="formPagamento.$invalid">
+
+                       Processar Pagamento!
+
+                   </button>
+                   </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <h3>{{cursoSelecionado.nome}}</h3>
+
+
+            <span ng-bind-html="cursoSelecionado.descricao"></span>
+
+            <span class="text-large">R$ {{cursoSelecionado.valor}}</span>
+            <br>
+            Site seguro seal...
+
+        </div>
+    </div>
+
+</form>
+
+
+
