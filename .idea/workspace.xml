@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7b68905-1195-4ebc-a44d-96dafa866d4d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sistema/application/config/database.php.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sistema/application/config/database.php.dist" afterPath="$PROJECT_DIR$/sistema/application/config/database.php.dist" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="plb.iws" />
@@ -62,8 +62,8 @@
       <file leaf-file-name="database.php.dist" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sistema/application/config/database.php.dist">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46285716">
-              <caret line="78" column="23" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.51428574">
+              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -775,8 +775,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sistema/application/config/database.php.dist">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46285716">
-          <caret line="78" column="23" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.51428574">
+          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
           <folding />
         </state>
       </provider>
